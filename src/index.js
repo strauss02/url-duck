@@ -4,13 +4,18 @@ const baseURL = 'http://localhost:3000'
 
 const inputField = document.getElementById('url_input')
 const submitBtn = document.getElementById('submit-btn')
+const newUrlField = document.querySelector('h3')
 
 submitBtn.addEventListener('click', handleSubmit)
 
-function handleSubmit(e) {
+async function handleSubmit(e) {
   const inputURL = inputField.value
   console.log(inputURL)
-  axios.post(`${baseURL}/`, { userURL: inputURL }).then((res) => {
-    console.log(res)
-  })
+  const newURL = await axios
+    .post(`${baseURL}/`, { userURL: inputURL })
+    .then((res) => {
+      console.log(res.data)
+      return res.data
+    })
+  newUrlField.innerText = `${window.location.href}${newURL}`
 }
