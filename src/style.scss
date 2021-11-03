@@ -1,0 +1,22 @@
+:root {
+  --mainBg: brown;
+}
+
+$light-text: moccasin;
+
+body {
+  background-color: var(--mainBg);
+  color: $light-text;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+.container {
+  padding: 1rem;
+  display: flex;
+  background: linear-gradient(to top, black, white);
+
+  h1 {
+    text-align: center;
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"bundle.js","mappings":"mBAGAA,SAASC,cAAc,MAAMC,UADZ,iC","sources":["webpack://url-duck/./src/index.js"],"sourcesContent":["import './style.scss'\r\n\r\nconst headline = 'Welcome to my url shortenr!!!'\r\ndocument.querySelector('h1').innerText = headline\r\n"],"names":["document","querySelector","innerText"],"sourceRoot":""}
