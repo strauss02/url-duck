@@ -1,3 +1,24 @@
-:root{--mainBg: brown}body{background-color:brown;background-color:var(--mainBg);color:#ffe4b5;font-family:"Trebuchet MS","Lucida Sans Unicode","Lucida Grande","Lucida Sans",Arial,sans-serif}.container{padding:1rem;display:flex;background:linear-gradient(to top, black, white)}.container h1{text-align:center}
+/*!***************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/style.scss ***!
+  \***************************************************************************************************************************************************/
+:root {
+  --mainBg: brown;
+}
+
+body {
+  background-color: brown;
+  background-color: var(--mainBg);
+  color: moccasin;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+.container {
+  padding: 1rem;
+  display: flex;
+  background: linear-gradient(to top, black, white);
+}
+.container h1 {
+  text-align: center;
+}
 
 /*# sourceMappingURL=main.css.map*/
