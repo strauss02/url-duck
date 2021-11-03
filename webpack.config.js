@@ -56,5 +56,7 @@ module.exports = {
 
   devServer: {
     liveReload: true,
+    watchFiles: ['src/*'],
+    hot: true,
   },
 }

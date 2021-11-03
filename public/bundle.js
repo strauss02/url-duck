@@ -62,8 +62,6 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
 
-var headline = 'Welcome to my url shortenr!!! lalala!';
-document.querySelector('h1').innerText = headline;
 var inputField = document.getElementById('url_input');
 var submitBtn = document.getElementById('submit-btn');
 submitBtn.addEventListener('click', handleSubmit); //fsdfs
