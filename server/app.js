@@ -3,6 +3,9 @@ const app = new express()
 const cors = require('cors')
 const path = require('path')
 const router = express.Router()
+const fs = require('fs')
+
+const urls = require('./urls.json')
 
 app.use(cors())
 app.use(express.json())
@@ -26,6 +29,11 @@ app.post('/', (req, res) => {
   const randomURL = getrandom()
   //   res.send(req.body['userURL'])
   //store url in db {randomURL : inputURL}
+
+  let toBeUrls = urls
+  toBeUrls[randomURL] = inputURL
+  console.log(toBeUrls)
+  fs.writeFileSync('./server/urls.json', JSON.stringify(toBeUrls))
   res.send(randomURL)
 })
 
