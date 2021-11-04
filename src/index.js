@@ -17,5 +17,6 @@ async function handleSubmit(e) {
       console.log(res.data)
       return res.data
     })
-  newUrlField.innerText = `${window.location.href}${newURL}`
+  //REPLACE BEFORE DEPLOYMENT
+  newUrlField.innerText = `${baseURL}/${newURL}`
 }
