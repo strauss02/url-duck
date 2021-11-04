@@ -1,14 +1,12 @@
-/** ************************* */
+/* eslint-disable new-cap */
+
+/** ******** Import tools ******* */
 
 const express = require('express')
 const app = new express()
 const cors = require('cors')
-const path = require('path')
-const router = express.Router()
-const fs = require('fs')
-const urls = require('./urls.json')
 
-/** ************************* */
+/** ****** Import router modules ******* */
 
 const redirectRouter = require('./redirect-router')
 const shortifyRouter = require('./shortify-router')
