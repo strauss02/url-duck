@@ -6,7 +6,7 @@ const urls = require('./urls.json')
 router.get('/*', (req, res) => {
   //   res.send('aha, I see you are a man of culture as well!')
   //   res.send(req.url)
-  const hash = req.baseUrl.substring(1)
+  const hash = req.url.substring(1)
   // check hash existence in db
   const entries = Object.entries(urls)
   // TODO: replace check with simple key check
