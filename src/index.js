@@ -1,4 +1,4 @@
-import './style.scss'
+import './style.css'
 import axios from 'axios'
 const baseURL = 'http://localhost:3000'
 
