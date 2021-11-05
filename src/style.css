@@ -8,6 +8,25 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin: 2rem 20rem;
-  background-color: bisque;
+  background-color: whitesmoke;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  align-content: flex-start;
+}
+
+#logo {
+  width: 10rem;
+}
+
+#logo-container > h1 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: gray;
 }
