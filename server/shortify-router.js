@@ -28,6 +28,19 @@ router.post('/', (req, res) => {
   }
 
   // ASSERT PROPER URL
+  function isValidUrl(string) {
+    let url
+    try {
+      url = new URL(string)
+    } catch (_) {
+      return false
+    }
+    return url.protocol === 'http:' || url.protocol === 'https:'
+  }
+
+  if (!isValidUrl(inputURL)) {
+    throw new ApiError(400, 'That URL is invalid.')
+  }
 
   function getrandom() {
     const randomString =
