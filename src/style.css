@@ -2,6 +2,14 @@
   font-family: 'Dosis';
   src: url('./Dosis.ttf');
 }
+@font-face {
+  font-family: 'DMSans';
+  src: url('./DMSans-Regular.ttf');
+}
+@font-face {
+  font-family: 'Dongle';
+  src: url('./Dongle-Regular.ttf');
+}
 
 * {
   box-sizing: border-box;
@@ -16,7 +24,7 @@ body {
   align-items: stretch;
   margin: 2rem auto;
   background-color: whitesmoke;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'DMSans', Tahoma, Geneva, Verdana, sans-serif;
   width: 70rem;
 }
 
@@ -51,22 +59,55 @@ body {
 #input-field-container {
   display: flex;
   justify-content: space-around;
-  border: 2px solid red;
+
   border-radius: 20px;
-  padding: 1rem 0.3rem;
+  padding: 2rem 0.3rem;
 }
 
 input {
   padding: 1rem 0.3rem;
-  width: 65%;
+  height: 5rem;
+  width: 62%;
   background: linear-gradient(whitesmoke, whitesmoke) padding-box,
     linear-gradient(to right, rgba(252, 212, 31, 1), rgb(255, 187, 27))
       border-box;
   border-radius: 50em;
   border: 5px solid transparent;
+  transition: 0.8s ease-out;
+  /* GLOW */
+
+  box-shadow: 0px 0px 20px 0px rgba(255, 0, 0, 0);
+}
+
+input:focus {
+  border-width: 10px;
+  width: 65%;
+  box-shadow: 0px 0px 14px 0px rgb(255, 187, 27);
+  outline: none;
+  transition: 0.6s ease-out;
+}
+
+input::placeholder {
+  color: rgb(187, 187, 187);
+  font-family: DMSans;
+  text-align: center;
+  font-size: 1.25rem;
+  padding-left: 0rem;
+}
+
+input:hover {
+  box-shadow: 0px 0px 10px 0px rgb(255, 187, 27);
+}
+
+input {
+  color: rgb(0, 0, 0);
+  font-size: 1.25rem;
+  padding-left: 1.25rem;
+  font-family: DMSans;
 }
 
 #submit-btn {
+  font-family: 'Dongle', Tahoma, Geneva, Verdana, sans-serif;
   border-radius: 50em;
   background: linear-gradient(
     to right,
@@ -74,19 +115,35 @@ input {
     rgb(255, 187, 27)
   );
   border: none;
-  font-family: 'Dosis';
-  font-size: 2rem;
+  font-size: 3.2rem;
   color: whitesmoke;
   width: 25%;
-  padding: 1rem 0.3rem;
+  box-shadow: 0px 0px 14px 0px rgba(255, 187, 27, 0);
+  transition: 0.2s ease-out;
+}
+
+#submit-btn:hover {
+  box-shadow: 0px 0px 14px 0px rgb(255, 187, 27);
+  transition: 0.2s ease-out;
+}
+
+#submit-btn:active {
+  box-shadow: 0px 0px 40px 0px rgb(255, 187, 27);
+  transition: 0.2s ease-out;
+  transform: translateY(5px);
 }
 
 #alert-box {
-  border: 1px solid gray;
-  border-radius: 5px;
   margin: 1rem 0rem;
   text-align: center;
   font-size: 0.85rem;
   padding: 0.75rem;
-  background-color: rgb(255, 219, 60);
+  background: linear-gradient(whitesmoke, whitesmoke) padding-box,
+    linear-gradient(to right, rgb(73, 192, 152), rgb(76, 161, 94)) border-box;
+  border-radius: 50em;
+  border: 5px solid transparent;
+}
+
+#new-url-container {
+  text-align: center;
 }
