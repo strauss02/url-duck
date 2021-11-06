@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Dosis';
+  src: url('./Dosis.ttf');
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,13 +13,15 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  margin: 2rem 20rem;
+  align-items: stretch;
+  margin: 2rem auto;
   background-color: whitesmoke;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 70rem;
 }
 
 #logo-container {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: baseline;
@@ -26,9 +33,52 @@ body {
 }
 
 #logo-container > h1 {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+  font-family: 'Dosis', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: gray;
+
+  margin-left: 1.2rem;
+  font-size: 6rem;
+  background: rgb(252, 212, 31);
+  background: linear-gradient(
+    56deg,
+    rgba(252, 212, 31, 1) 0%,
+    rgb(255, 187, 27) 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#input-field-container {
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid red;
+  border-radius: 20px;
+  padding: 1rem 0.3rem;
+}
+
+input {
+  padding: 1rem 0.3rem;
+  width: 65%;
+  background: linear-gradient(whitesmoke, whitesmoke) padding-box,
+    linear-gradient(to right, rgba(252, 212, 31, 1), rgb(255, 187, 27))
+      border-box;
+  border-radius: 50em;
+  border: 5px solid transparent;
+}
+
+#submit-btn {
+  border-radius: 50em;
+  background: linear-gradient(
+    to right,
+    rgba(252, 212, 31, 1),
+    rgb(255, 187, 27)
+  );
+  border: none;
+  font-family: 'Dosis';
+  font-size: 2rem;
+  color: whitesmoke;
+  width: 25%;
+  padding: 1rem 0.3rem;
 }
 
 #alert-box {
