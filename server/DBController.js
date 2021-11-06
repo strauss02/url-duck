@@ -1,4 +1,4 @@
-const fs = require('fs/promises')
+// const fs = require('fs/promises')
 const fsSync = require('fs')
 
 const data = require('./urls.json')

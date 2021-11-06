@@ -22,14 +22,6 @@ const DB = new DBController('test')
 router.post('/', (req, res) => {
   const inputURL = req.body.userURL
 
-  // // ASSERT NOT SHORTENED BEFORE
-  // const urls = urls
-  // for (const [key, value] of Object.entries(urls)) {
-  //   if (value === inputURL) {
-  //     res.send(key)
-  //     return
-  //   }
-  // }
   const prevUrl = DB.getKeyByValue(inputURL)
 
   if (prevUrl) {
