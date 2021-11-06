@@ -133,17 +133,96 @@ input {
   transform: translateY(5px);
 }
 
-#alert-box {
-  margin: 1rem 0rem;
-  text-align: center;
-  font-size: 0.85rem;
-  padding: 0.75rem;
+#btn-copy-url {
+  border: none;
+  width: 6rem;
+  font-size: 2rem;
+  margin: 0 2rem;
+  font-family: 'Dongle';
   background: linear-gradient(whitesmoke, whitesmoke) padding-box,
-    linear-gradient(to right, rgb(73, 192, 152), rgb(76, 161, 94)) border-box;
+    linear-gradient(to right, rgb(31, 182, 252), rgb(115, 209, 178)) border-box;
+  border-radius: 1em;
+  width: 8rem;
+  border: 3px solid transparent;
+  box-shadow: 0px 0px 20px 0px rgba(93, 255, 247, 0);
+  transition: 0.7s ease;
+}
+
+#btn-copy-url:hover {
+  color: rgb(63, 61, 65);
+  box-shadow: 0px 0px 20px 0px rgb(93, 255, 247);
+  transition: 0.3s ease;
+}
+
+#btn-copy-url:active {
+  color: rgb(63, 61, 65);
+  box-shadow: 0px 0px 20px 0px rgb(93, 255, 247);
+  transition: 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: translateY(5px);
+}
+
+#alert-box {
+  width: 60%;
+  margin: 1rem auto;
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 0.75rem;
+  color: rgb(53, 53, 53);
+
+  background: linear-gradient(whitesmoke, whitesmoke) padding-box,
+    linear-gradient(
+        69deg,
+        rgba(165, 223, 146, 1) 0%,
+        rgba(109, 235, 193, 1) 30%,
+        rgba(219, 104, 104, 1) 68%,
+        rgba(232, 151, 69, 1) 100%
+      )
+      border-box;
+  background-size: 500% 500%;
+  transition: 0.8s ease-in-out;
+
   border-radius: 50em;
-  border: 5px solid transparent;
+  border: 4px solid transparent;
+}
+
+.success {
+  background-position: 0% 100% !important;
+}
+
+.failure {
+  background-position: 90% 100% !important;
 }
 
 #new-url-container {
   text-align: center;
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+  color: rgb(36, 36, 56);
+  margin-bottom: 3rem;
+}
+
+#new-url {
+  font-family: 'DMSans';
+  font-size: 2.5rem;
+  text-decoration: none;
+  color: rgb(47, 46, 51);
+  background: linear-gradient(whitesmoke, whitesmoke) padding-box,
+    linear-gradient(to right, rgb(124, 192, 200), rgb(147, 172, 219)) border-box;
+  border-bottom: 4px solid transparent;
+  transition: 0.4s ease;
+}
+
+#new-url:hover {
+  color: rgba(0, 0, 0, 0.431);
+  cursor: pointer;
+}
+
+#alert-container {
+  text-align: center;
+}
+
+.hider {
+  display: none;
 }

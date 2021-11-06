@@ -5,9 +5,12 @@ const baseURL = 'http://localhost:3000'
 
 const inputField = document.getElementById('url_input')
 const submitBtn = document.getElementById('submit-btn')
-const newUrlField = document.querySelector('h3')
+const sampleText = document.querySelector('h3')
 const copyButton = document.getElementById('btn-copy-url')
 const alertBox = document.getElementById('alert-box')
+const newUrlsection = document.getElementById('new-url-container')
+const alertSection = document.getElementById('alert-container')
+const newUrlBox = document.getElementById('new-url')
 
 copyButton.addEventListener('click', handleCopy)
 submitBtn.addEventListener('click', handleSubmit)
@@ -25,15 +28,23 @@ async function handleSubmit(e) {
       })
 
     // REPLACE BEFORE DEPLOYMENT
-    newUrlField.innerText = `${baseURL}/${newURL}`
+    newUrlBox.innerText = `${baseURL}/${newURL}`
+    newUrlBox.href = `${baseURL}/${newURL}`
     displayAlert('Success! Try out your new URL now!')
+    toggleVisibility(alertSection, true)
+    toggleAlertStyle(false)
+    toggleVisibility(copyButton, true)
+    toggleVisibility(newUrlBox, true)
+    toggleVisibility(sampleText, false)
   } catch (error) {
     displayAlert(error.response ? error.response.data : error)
+    toggleVisibility(alertSection, true)
+    toggleAlertStyle(true)
   }
 }
 
 function handleCopy() {
-  navigator.clipboard.writeText(newUrlField.innerText)
+  navigator.clipboard.writeText(newUrlBox.innerText)
 }
 
 function assertUrlFilled(url) {
@@ -44,4 +55,24 @@ function assertUrlFilled(url) {
 
 function displayAlert(message) {
   alertBox.innerText = message
+}
+
+function toggleAlertStyle(isError) {
+  if (document.querySelector('.success') && isError) {
+    alertBox.classList.toggle('failure')
+    alertBox.classList.remove('success')
+  } else if (document.querySelector('.failure') && !isError) {
+    alertBox.classList.toggle('success')
+    alertBox.classList.remove('failure')
+  }
+}
+
+function toggleVisibility(element, isVisible) {
+  if (isVisible && element.classList.contains('hider')) {
+    element.classList.remove('hider')
+    return
+  }
+  if (!isVisible && !element.classList.contains('hider')) {
+    element.classList.add('hider')
+  }
 }
