@@ -6,6 +6,10 @@ const router = express.Router()
 const urls = require('./urls.json')
 const fs = require('fs')
 const ApiError = require('./ApiError')
+const DBController = require('./DBController')
+
+const DB = new DBController('test')
+
 /* ==============================  
 
   This router is for processing POST requests.
@@ -18,13 +22,19 @@ const ApiError = require('./ApiError')
 router.post('/', (req, res) => {
   const inputURL = req.body.userURL
 
-  // ASSERT NOT SHORTENED BEFORE
-  const toBeUrls = urls
-  for (const [key, value] of Object.entries(toBeUrls)) {
-    if (value === inputURL) {
-      res.send(key)
-      return
-    }
+  // // ASSERT NOT SHORTENED BEFORE
+  // const urls = urls
+  // for (const [key, value] of Object.entries(urls)) {
+  //   if (value === inputURL) {
+  //     res.send(key)
+  //     return
+  //   }
+  // }
+  const prevUrl = DB.getKeyByValue(inputURL)
+
+  if (prevUrl) {
+    res.send(prevUrl)
+    return
   }
 
   // ASSERT PROPER URL
@@ -50,8 +60,8 @@ router.post('/', (req, res) => {
   }
   const randomURL = getrandom()
 
-  toBeUrls[randomURL] = inputURL
-  fs.writeFileSync('./server/urls.json', JSON.stringify(toBeUrls))
+  DB.store(randomURL, inputURL)
+
   res.send(randomURL)
 })
 
