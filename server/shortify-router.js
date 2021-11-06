@@ -5,7 +5,7 @@ const express = require('express')
 const router = express.Router()
 const urls = require('./urls.json')
 const fs = require('fs')
-
+const ApiError = require('./ApiError')
 /* ==============================  
 
   This router is for processing POST requests.
@@ -18,6 +18,17 @@ const fs = require('fs')
 router.post('/', (req, res) => {
   const inputURL = req.body.userURL
 
+  // ASSERT NOT SHORTENED BEFORE
+  const toBeUrls = urls
+  for (const [key, value] of Object.entries(toBeUrls)) {
+    if (value === inputURL) {
+      res.send(key)
+      return
+    }
+  }
+
+  // ASSERT PROPER URL
+
   function getrandom() {
     const randomString =
       Math.random().toString(32).substring(2, 5) +
@@ -26,7 +37,6 @@ router.post('/', (req, res) => {
   }
   const randomURL = getrandom()
 
-  const toBeUrls = urls
   toBeUrls[randomURL] = inputURL
   fs.writeFileSync('./server/urls.json', JSON.stringify(toBeUrls))
   res.send(randomURL)
