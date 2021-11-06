@@ -30,3 +30,13 @@ body {
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: gray;
 }
+
+#alert-box {
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin: 1rem 0rem;
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 0.75rem;
+  background-color: rgb(255, 219, 60);
+}
