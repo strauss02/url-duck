@@ -1,6 +1,7 @@
 import './style.css'
 import axios from 'axios'
-const baseURL = 'http://localhost:3000'
+// const baseURL = 'http://localhost:3000'
+const baseURL = window.location.href
 // TODO: DECIDE BASE URL BASED ON ENV
 
 const inputField = document.getElementById('url_input')
@@ -20,12 +21,10 @@ async function handleSubmit(e) {
     const inputURL = inputField.value
     assertUrlFilled(inputURL)
     console.log(inputURL)
-    const newURL = await axios
-      .post(`${baseURL}/`, { userURL: inputURL })
-      .then((res) => {
-        console.log(res.data)
-        return res.data
-      })
+    const newURL = await axios.post(`/`, { userURL: inputURL }).then((res) => {
+      console.log(res.data)
+      return res.data
+    })
 
     // REPLACE BEFORE DEPLOYMENT
     newUrlBox.innerText = `${baseURL}/${newURL}`
