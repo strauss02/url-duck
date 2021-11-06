@@ -1,4 +1,4 @@
-# url duck
+# Duck URL
 
 Visit Now!
 https://duck-url.herokuapp.com/
