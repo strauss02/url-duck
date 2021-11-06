@@ -3,30 +3,35 @@
 <html>
   <head>
     <title>URL Shortener</title>
-    <link rel="icon" type="image/png" href="src\front\favicon.ico" />
+    <link rel="icon" type="image/png" href="./favicon.ico" />
   </head>
 
   <body>
-    <h1>URL Duck</h1>
+    <div id="logo-container">
+      <img id="logo" src="./assets/duck.png" alt="" />
+      <h1>Duck URL</h1>
+    </div>
     <main>
       <section>
-        <fieldset>
-          <legend>URL Shortener</legend>
-          <label for="url_input">URL:</label>
+        <div id="input-field-container">
           <input
             id="url_input"
             type="text"
             name="url"
-            placeholder="https://www.duckduck.org/"
+            placeholder="https://www.your-URL-here.org/"
           />
-          <button id="submit-btn" type="submit" value="POST URL">
-            Short me up! nigga!!
-          </button>
-        </fieldset>
+          <button id="submit-btn" type="submit" value="POST URL">Quack!</button>
+        </div>
       </section>
-      <section>
-        <h2>Your new URL:</h2>
-        <h3>your shiny new url is gonna be right here...</h3>
+      <section class="" id="new-url-container">
+        <h3 id="sample-text" class="">
+          Quack quack! copy and paste the URL you want to short.
+        </h3>
+        <a id="new-url" class="hider" href="#" target="_blank">new url</a>
+        <button id="btn-copy-url" class="hider">Copy</button>
+      </section>
+      <section class="hider" id="alert-container">
+        <div id="alert-box" class="success">Alerts display here</div>
       </section>
     </main>
     <footer></footer>
