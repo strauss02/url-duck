@@ -28,7 +28,7 @@ async function handleSubmit(e) {
 
     // REPLACE BEFORE DEPLOYMENT
     newUrlBox.innerText = `${baseURL}/${newURL}`
-    newUrlBox.href = `${baseURL}/${newURL}`
+    newUrlBox.href = `${baseURL}${newURL}`
     displayAlert('Success! Try out your new URL now!')
     toggleVisibility(alertSection, true)
     toggleAlertStyle(false)
